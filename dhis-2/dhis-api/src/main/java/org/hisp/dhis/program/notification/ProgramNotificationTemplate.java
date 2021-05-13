@@ -33,12 +33,14 @@ import org.hisp.dhis.common.BaseIdentifiableObject;
 import org.hisp.dhis.common.DeliveryChannel;
 import org.hisp.dhis.common.DxfNamespaces;
 import org.hisp.dhis.common.MetadataObject;
+import org.hisp.dhis.common.NotificationTemplateObject;
 import org.hisp.dhis.dataelement.DataElement;
 import org.hisp.dhis.notification.NotificationTemplate;
 import org.hisp.dhis.schema.PropertyType;
 import org.hisp.dhis.schema.annotation.Property;
 import org.hisp.dhis.schema.annotation.PropertyRange;
 import org.hisp.dhis.trackedentity.TrackedEntityAttribute;
+import org.hisp.dhis.translation.Translatable;
 import org.hisp.dhis.user.UserGroup;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -52,7 +54,8 @@ import com.google.common.collect.Sets;
  */
 @JacksonXmlRootElement( namespace = DxfNamespaces.DXF_2_0 )
 public class ProgramNotificationTemplate
-    extends BaseIdentifiableObject implements NotificationTemplate, MetadataObject
+    extends NotificationTemplateObject
+    implements MetadataObject
 {
     private String subjectTemplate;
 
